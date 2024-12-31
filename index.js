@@ -8,7 +8,7 @@ theme.addEventListener('click', turntheme);
 textCopy.addEventListener('click',copyTextToClipboard);
 
 // It is use to take all necessary values from frontend
-async function generateContent() {
+function generateContent() {
     const optionValue = document.getElementById('dropdown').value;
     const type = document.getElementById('types').value;
     main(promptMesaaage, optionValue, type);
@@ -16,7 +16,6 @@ async function generateContent() {
 
 // It is used for to generate output from gemini api
 async function main(prompt, level, type) {
-    console.log('Enter in main fuction');
     const apiKey = "Enter-Your-Gemini-ApiKey";
     url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
     try {
@@ -38,7 +37,7 @@ async function main(prompt, level, type) {
 
         // output.style.color = 'black'
         output.innerText = `${promptAns}`;
-        console.log(data?.candidates[0].content.parts[0].text);
+        // console.log(data?.candidates[0].content.parts[0].text);
 
     } catch (e) {
         console.log(`Error during gemini api is ${e}`);
@@ -65,9 +64,9 @@ function turntheme() {
 function copyTextToClipboard() {
     // Copy text with proper formate to clipboard
     navigator.clipboard.writeText(output.innerText);
-    console.log(output.innerText);
     
 }
+
 // Generates a project description for a random company, customized by project type and detail level.
 const promptMesaaage = `Create a description for a project related to a randomly generated company. Adjust the description based on the specified input:
 
