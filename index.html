@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Ideax</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <img id="logo" src="/assets/logo.png" alt="" srcset="">
+        <div id="mode"><img src="./assets/light.png" alt=""></div>
+    </div>
+    <div class="mainDiv">
+        <div class="selector">
+            <select name="level" id="dropdown">
+                <option class="options" value="Easy">Freshor</option>
+                <option class="options" value="Middle" selected>Student</option>
+                <option class="options" value="Employee">Developer</option>
+            </select>
+            <select name="type" id="types">
+                <option class="options" value="logo">Logo</option>
+                <option class="options" value="websites" selected>Websites</option>
+                <option class="options" value="billboard">Billboard</option>
+                <option class="options" value="illustrations ">Illustrations </option>
+            </select>
+        </div>
+        <div class="promptDiv">
+            <p id="output">Get ideas to Develop project ❌ skills ✔️</p>
+            <div id="btn">
+                <button id="generate" type="button">Generate</button>
+                <div id="copyDiv">
+                    <img id="copy" src="/assets/copy-48.png" alt="copy" srcset="">
+                </div>
+                <div id="hoverText">Copy</div>
+              
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/index.js"></script>
+
+</html>
