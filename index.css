@@ -5,9 +5,9 @@
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
-/* Dark Mode */
+/* Dark theme */
 body {
-    background-color: black;
+    background-color: #000;
     color: white;
 }
 

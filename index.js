@@ -16,6 +16,7 @@ function generateContent() {
 
 // It is used for to generate output from gemini api
 async function main(prompt, level, type) {
+
     const apiKey = "Enter-Your-Gemini-ApiKey";
     url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
     try {
@@ -37,7 +38,6 @@ async function main(prompt, level, type) {
 
         // output.style.color = 'black'
         output.innerText = `${promptAns}`;
-        // console.log(data?.candidates[0].content.parts[0].text);
 
     } catch (e) {
         console.log(`Error during gemini api is ${e}`);
@@ -66,7 +66,6 @@ function copyTextToClipboard() {
     navigator.clipboard.writeText(output.innerText);
     
 }
-
 // Generates a project description for a random company, customized by project type and detail level.
 const promptMesaaage = `Create a description for a project related to a randomly generated company. Adjust the description based on the specified input:
 
