@@ -1,11 +1,10 @@
-const mode = document.getElementById('mode');
+const theme = document.getElementById('theme');
 const output = document.getElementById('output');
 const textCopy = document.getElementById('copy');
 const generate = document.getElementById('generate');
 
-
 generate.addEventListener("click", generateContent);
-mode.addEventListener('click', turnMode);
+theme.addEventListener('click', turntheme);
 textCopy.addEventListener('click',copyTextToClipboard);
 
 // It is use to take all necessary values from frontend
@@ -18,7 +17,7 @@ async function generateContent() {
 // It is used for to generate output from gemini api
 async function main(prompt, level, type) {
     console.log('Enter in main fuction');
-    const apiKey = "AIzaSyBU4AcZZHKrj9mzh7Db1HDRF12TadHyWHo";
+    const apiKey = "Enter-Your-Gemini-ApiKey";
     url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
     try {
         const response = await fetch(url, {
@@ -47,8 +46,8 @@ async function main(prompt, level, type) {
 }
 
 
-// this function is for turn off dark mode or turn on dark mode
-function turnMode() {
+// this function is for turn off dark theme or turn on dark theme
+function turntheme() {
     const body = document.body;
     const bulb = body.classList.contains('dark-mode');
     if (bulb) {
@@ -69,7 +68,7 @@ function copyTextToClipboard() {
     console.log(output.innerText);
     
 }
-
+// Generates a project description for a random company, customized by project type and detail level.
 const promptMesaaage = `Create a description for a project related to a randomly generated company. Adjust the description based on the specified input:
 
 Project Types:

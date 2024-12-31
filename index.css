@@ -11,7 +11,7 @@ body {
     color: white;
 }
 
-/* light Mode */
+/* light theme */
 body.dark-mode {
     background-color: white;
     color: black;
@@ -41,7 +41,8 @@ body.dark-mode {
     flex-direction: column;
 }
 
-/* Apply styles to both child divs inside the main container (mainDiv) */.promptDiv , .selector{
+/* Apply styles to both child divs inside the main container (mainDiv) */
+.promptDiv , .selector{
     margin: 3% 20%;
     padding: 4vh;
     border: 2px solid black;
