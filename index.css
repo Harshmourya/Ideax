@@ -54,14 +54,14 @@ body.dark-mode {
 /* Parent container styles for #dropdown and #types */
 .selector{
     display: flex;
-    width: 45vh;
+    width: 35vw;
     gap: 3vh;
     justify-content: space-evenly;
 }
 
 /* Dropdown selector styles */
-#dropdown , #types{
-    width: 40%;
+#dropdown , #types, #difficulty{
+    width: 11vw !important;
     height: 5vh;
     font-size: 2.3vh;
     border-radius: 1vh;
