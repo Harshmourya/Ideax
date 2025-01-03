@@ -21,7 +21,7 @@ A platform to sharpen your skills with real-world challenges tailored to your le
 
 2. **API Key Setup**:  
    To use the Gemini API, follow these steps:  
-   - Go to the [Grmini API website](https://grmini.com/) and create an account.  
+   - Go to the [Gemini API website](https://ai.google.dev/gemini-api/docs/api-key) and create an account.  
    - Generate your API key.  
    - Open the `index.js` file in your project.  
    - Replace `your_api_key_here` with your actual API key in the following line:
