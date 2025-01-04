@@ -14,7 +14,21 @@ function generateContent() {
   const role = document.getElementById("dropdown").value;
   const type = document.getElementById("types").value;
   const difficulty = document.getElementById("difficulty").value;
+  preLoaderAnimation();
   if (role !== "role" && type !== "selector") main(difficulty, role, type);
+}
+
+function preLoaderAnimation() {
+  const preloaders = document.getElementsByClassName('preloader');
+  output.innerHTML = "";
+  for  (let preloader of preloaders) {
+    if (!preloader.classList.contains('animation')) {
+      preloader.classList.add('animation')
+    } else {
+      preloader.classList.remove('animation')
+    }
+  }
+
 }
 
 // It is used for to generate output from gemini api
@@ -31,13 +45,15 @@ async function main(difficulty, role, type) {
             role: "user",
             parts: [
               {
-                text: `Generate a random ${type} project description for ${role} which has a ${difficulty} difficulty. The project description should contain the following points: 
-                1. Company name and industry
-                2. Project name
-                3. Project description
-                5. Project duration
+                text: `
+                Create a single ${type} project description for a ${role} with ${difficulty} difficulty. Include:
 
-                Make sure that the company name and industry are always different.
+                1.A unique company name with industry.
+                2.A creative project name.
+                3.A brief Project description of the project.
+                4.A Deadline in week .
+
+                Ensure the output avoids symbols like asterisks (), hash marks (##), or other special characters .Just use • for formating . Each result should be unique every time the prompt is run
                 `,
               },
             ],
@@ -45,6 +61,8 @@ async function main(difficulty, role, type) {
         ],
       }),
     });
+
+    preLoaderAnimation();
     // get resonse and parse it
     const data = await response.json();
 

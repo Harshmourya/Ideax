@@ -43,6 +43,7 @@ body.dark-mode {
 
 /* Apply styles to both child divs inside the main container (mainDiv) */
 .promptDiv , .selector{
+    min-width: 45vh;
     margin: 3% 20%;
     padding: 4vh;
     border: 2px solid black;
@@ -54,14 +55,13 @@ body.dark-mode {
 /* Parent container styles for #dropdown and #types */
 .selector{
     display: flex;
-    width: 35vw;
-    gap: 3vh;
+    gap: 2vh;
     justify-content: space-evenly;
 }
 
 /* Dropdown selector styles */
 #dropdown , #types, #difficulty{
-    width: 11vw !important;
+    width: 10vw !important;
     height: 5vh;
     font-size: 2.3vh;
     border-radius: 1vh;
@@ -71,9 +71,6 @@ body.dark-mode {
 
 /* Generate a custom style for the text display */
 #projects{
-    /* background-image: linear-gradient(to left , blue,  violet  ,red ); */
-    /* background-clip: text; */
-    /* color: transparent; */
     font-size: 1.2rem;
 }
 
@@ -123,4 +120,37 @@ button:hover {
     right: 0%;
     font-size: 1.1rem;
     font-weight: 500;
+}
+
+.preloader.animation{
+    height: 20px;
+    margin: 12px 0;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loaderhead{
+    width: 50%;
+}
+
+.preloader.animation::before{
+    content: "";
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    background-position: 450px 400px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right , #d9d9d9 0% , rgba(0,0,0,0.4) 20% , #d9d9d9 40% , #d9d9d9 100% );
+    animation: loadingAnimation 1.5s linear infinite;
+}
+
+@keyframes loadingAnimation {
+    0%{
+        background-position: -450px 0;
+    }
+    100%{
+        background-position: 450px 0;
+    }
 }
