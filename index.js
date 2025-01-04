@@ -14,8 +14,12 @@ function generateContent() {
   const role = document.getElementById("dropdown").value;
   const type = document.getElementById("types").value;
   const difficulty = document.getElementById("difficulty").value;
-  preLoaderAnimation();
-  if (role !== "role" && type !== "selector") main(difficulty, role, type);
+  
+  if (role !== "role" && type !== "selector"){
+    preLoaderAnimation();
+    main(difficulty, role, type);
+  }
+  else alert('Please select Proper Options ')
 }
 
 function preLoaderAnimation() {
@@ -33,7 +37,7 @@ function preLoaderAnimation() {
 
 // It is used for to generate output from gemini api
 async function main(difficulty, role, type) {
-  const apiKey = "AIzaSyBU4AcZZHKrj9mzh7Db1HDRF12TadHyWHo";
+  const apiKey = "Enter-Your-Apikey";
   url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
   try {
     const response = await fetch(url, {
